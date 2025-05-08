@@ -14,7 +14,8 @@
         <div class="company-info">
             <h1>JMS VIP Limo Worldwide Corporation</h1>
             <p><a href="http://www.jmsviplimo.com" target="_blank">www.jmsviplimo.com</a></p>
-            <p id="companyAddress">250 S Van Brunt St, Suite F, Englewood, NJ 07631</p>
+            <p id="companyAddress">123 Limo Lane, Prestige City, State 98765</p>
+            <p><em>Please update the address above with your actual company address.</em></p>
         </div>
     </header>
 
@@ -50,6 +51,7 @@
                         <th>Plate Type</th>
                         <th>Plate No.</th>
                         <th>Status</th>
+                        <th>Notes</th> {/* Added Notes Header */}
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -66,7 +68,7 @@
             <span class="close-button">×</span>
             <h2 id="modalTitle">Add New Chauffeur</h2>
             <form id="chauffeurForm">
-                <input type="hidden" id="chauffeurId">
+                <input type="hidden" id="chauffeurIdInput"> {/* Renamed to avoid conflict with 'chauffeurId' variable */}
 
                 <label for="name">Name:</label>
                 <input type="text" id="name" name="name" required>
@@ -106,6 +108,9 @@
                     <option value="Emergency Only">Emergency Only</option>
                     <option value="On Vacation">On Vacation</option>
                 </select>
+
+                <label for="notes">Notes:</label> {/* Added Notes Field */}
+                <textarea id="notes" name="notes" rows="4"></textarea>
 
                 <button type="submit" id="saveChauffeurBtn">Save Chauffeur</button>
             </form>
