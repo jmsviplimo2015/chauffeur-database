@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JMS VIP Limo Chauffeur Database</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="assets/logo.png" alt="JMS VIP Limo Worldwide Corporation Logo" id="companyLogo">
+        </div>
+        <div class="company-info">
+            <h1>JMS VIP Limo Worldwide Corporation</h1>
+            <p><a href="http://www.jmsviplimo.com" target="_blank">www.jmsviplimo.com</a></p>
+            <p id="companyAddress">123 Limo Lane, Prestige City, State 98765</p>
+            <p><em>Please update the address above with your actual company address.</em></p>
+        </div>
+    </header>
+
+    <main>
+        <div class="controls">
+            <button id="addNewChauffeurBtn">Add New Chauffeur</button>
+            <div class="filters">
+                <input type="text" id="filterName" placeholder="Filter by Name...">
+                <input type="text" id="filterVehicle" placeholder="Filter by Vehicle Type...">
+                <input type="text" id="filterCity" placeholder="Filter by City...">
+                <select id="filterStatus">
+                    <option value="">All Statuses</option>
+                    <option value="Active">Active</option>
+                    <option value="Banned">Banned</option>
+                    <option value="Emergency Only">Emergency Only</option>
+                    <option value="On Vacation">On Vacation</option>
+                    <option value="Inactive">Inactive</option>
+                </select>
+                <button id="clearFiltersBtn">Clear Filters</button>
+            </div>
+        </div>
+
+        <div class="table-container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Name</th>
+                        <th>Phone</th>
+                        <th>Email</th>
+                        <th>Address</th>
+                        <th>Vehicle Type</th>
+                        <th>Plate Type</th>
+                        <th>Plate No.</th>
+                        <th>Status</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody id="chauffeurTableBody">
+                    <!-- Chauffeur rows will be inserted here by JavaScript -->
+                </tbody>
+            </table>
+        </div>
+    </main>
+
+    <!-- Add/Edit Chauffeur Modal -->
+    <div id="chauffeurModal" class="modal">
+        <div class="modal-content">
+            <span class="close-button">×</span>
+            <h2 id="modalTitle">Add New Chauffeur</h2>
+            <form id="chauffeurForm">
+                <input type="hidden" id="chauffeurId">
+
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+
+                <label for="email">Email Address:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="addressStreet">Street Address:</label>
+                <input type="text" id="addressStreet" name="addressStreet" required>
+
+                <label for="addressCity">City:</label>
+                <input type="text" id="addressCity" name="addressCity" required>
+
+                <label for="addressState">State:</label>
+                <input type="text" id="addressState" name="addressState" required>
+
+                <label for="addressZip">Zip Code:</label>
+                <input type="text" id="addressZip" name="addressZip" required>
+
+                <label for="vehicleType">Vehicle Type (e.g., Sedan - BMW 7 Series):</label>
+                <input type="text" id="vehicleType" name="vehicleType" required>
+
+                <label for="plateType">Plate Type (e.g., Commercial, Livery):</label>
+                <input type="text" id="plateType" name="plateType" required>
+
+                <label for="plateNo">Plate No.:</label>
+                <input type="text" id="plateNo" name="plateNo" required>
+
+                <label for="status">Status:</label>
+                <select id="status" name="status" required>
+                    <option value="Active">Active</option>
+                    <option value="Inactive">Inactive</option>
+                    <option value="Banned">Banned</option>
+                    <option value="Emergency Only">Emergency Only</option>
+                    <option value="On Vacation">On Vacation</option>
+                </select>
+
+                <button type="submit" id="saveChauffeurBtn">Save Chauffeur</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
